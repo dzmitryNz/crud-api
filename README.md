@@ -1,9 +1,5 @@
 # crud-api
 
-# [Course program module (for RS School students)](https://github.com/rolling-scopes-school/tasks/blob/master/node/modules/crud-api/README.md)
-
-# Assignment: CRUD API
-
 ## Description
 
 Your task is to implement simple CRUD API using in-memory database underneath.
@@ -16,6 +12,8 @@ Your task is to implement simple CRUD API using in-memory database underneath.
 - Prefer asynchronous API whenever possible
 
 ## Implementation details
+
+Default PORT is 3333, change it in .env if needed.
 
 1. Implemented endpoint `api/users`:
     - **GET** `api/users` is used to get all persons
@@ -63,3 +61,5 @@ Your task is to implement simple CRUD API using in-memory database underneath.
     2. Second `GET` request addressed to `localhost:4002/api` should return created user
     3. Third `DELETE` request addressed to `localhost:4003/api` deletes created user
     4. Fourth `GET` request addressed to `localhost:4001/api` should return **404** status code for created user
+
+
