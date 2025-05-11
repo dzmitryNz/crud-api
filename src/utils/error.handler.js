@@ -1,6 +1,6 @@
 export const ErrorHandler = (error, req, res) => {
-  console.error(error);
-
+  console.error('ErrorHandler', error);
+ console.log(error instanceof Error);
   if (error instanceof ValidationError) {
     res.status(400).json({
       message: error.message,
@@ -10,9 +10,9 @@ export const ErrorHandler = (error, req, res) => {
       message: error.message,
     });
   } else if (error instanceof NotFoundError) {
-    res.status(404).json({
-      message: error.message,
-    });
+    console.log('NotFoundError')
+    res.writeHead(404, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ message: error.message }));
   } else {
     res.status(500).json({
       message: 'Internal Server Error',

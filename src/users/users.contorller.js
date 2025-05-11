@@ -1,5 +1,5 @@
 import { validate } from "uuid";
-import { editUsersById, getUserById, getUsers } from "./users.service.js";
+import { deleteUserById, editUsersById, getUserById, getUsers } from "./users.service.js";
 
 export const usersController = (req, res) => {
   try {
@@ -17,7 +17,7 @@ export const usersController = (req, res) => {
       }
     if (method === 'GET') return getUserById(userId, res);
     if (method === 'PUT') return editUsersById(req, res);
-    if (method === 'DELETE') return dele(req, res);
+    if (method === 'DELETE') return deleteUserById(req, res);
   } else {
     if (method === 'GET') return getUsers(req, res);
     if (method === 'POST') return createUser(req, res);

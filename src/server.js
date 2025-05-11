@@ -1,9 +1,7 @@
 import * as http from 'node:http';
 
-import { PORT } from '../env.js';
+import { PORT } from './env.js';
 import { usersController } from './users/users.contorller.js';
-
-console.log('Hello Node.js');
 
 const server = http.createServer((req, res) => {
   const path = req.url;
