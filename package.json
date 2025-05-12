@@ -27,7 +27,8 @@
   },
   "homepage": "https://github.com/dzmitryNz/crud-api#readme",
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "webpack-cli": "^6.0.1"
   },
   "dependencies": {
     "dotenv": "^16.5.0",
