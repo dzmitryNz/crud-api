@@ -1,0 +1,39 @@
+{
+  "name": "crud-api",
+  "version": "0.0.1",
+  "description": "crud-api",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest --silent",
+    "test:verbose": "jest",
+    "start:dev": "nodemon ./src/server.js",
+    "start:prod": "npm run build && node ./dist/bundle.js",
+    "start:multi": "node ./src/cluster.js",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dzmitryNz/crud-api.git"
+  },
+  "keywords": [
+    "crud",
+    "api",
+    "nodejs"
+  ],
+  "author": "dzmitryNz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dzmitryNz/crud-api/issues"
+  },
+  "homepage": "https://github.com/dzmitryNz/crud-api#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "uuid": "^11.1.0",
+    "webpack": "^5.99.8"
+  }
+}
