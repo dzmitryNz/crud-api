@@ -5,7 +5,7 @@ import { isValide } from '../utils/validator.js';
 import { ErrorHandler, NotFoundError, ValidationError } from '../utils/error.handler.js';
 import { USERS, NODE_ENV } from '../env.js';
 
-const isDEV = NODE_ENV === 'dev' ? true : false; 
+const isDEV = NODE_ENV === 'dev' ? true : false;
 
 export const getUsers = (req, res) => {
   res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -46,7 +46,8 @@ export const createUser = (req, res) => {
 
     USERS.push(user);
 
-    res.status(201).json(user);
+    res.writeHead(201, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(user));
   } catch (error) {
     if (isDEV) console.log(error);
     res.writeHead(400, { 'Content-Type': 'application/json' });
@@ -74,9 +75,12 @@ export const editUsersById = (req, res) => {
       hobbies,
     });
     USERS[userIndex] = user;
-    res.status(200).json(user);
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(user));
   } catch (error) {
-    ErrorHandler(error, req, res);
+    if (isDEV) console.log(error);
+    res.writeHead(400, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ message: error.message }));
   }
 };
 
